@@ -27,7 +27,7 @@ int main() {
 		}
 		count--;
 		printf("End lkg.\n");
-		printf("%lld - %lld\n", a, count);
+		printf("Period - %lld\n", count);
 	getchar();
 	return 0;
 }
