@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <malloc.h>
+
 long long a = 4097, c = 421, m = 4294967296; //22695477
 long long lkg(long long x) {
 	long long  f = (a*x + c) % m;
@@ -14,11 +14,10 @@ long long lkg(long long x) {
 int main() {
 	long long x, count, y;
 	printf("Start lkg.\n");
-	for (a = 1; a < 1000000; a++) {
 		x = rand();
 		long long k = lkg(x);
 		count = 1;
-		y = 0;
+		y = -1;
 		x = k;
 		while (y != k) {
 			y = lkg(x);
@@ -29,7 +28,6 @@ int main() {
 		count--;
 		printf("End lkg.\n");
 		printf("%lld - %lld\n", a, count);
-	}
 	getchar();
 	return 0;
 }
