@@ -8,9 +8,9 @@
 long long a = 79385237, //Множитель
 c = 421, //Сдвиг
 m = 4294967296, //Модуль
-cv=32, //Количество диапазонов
+cv=30, //Количество диапазонов
 n=m/cv, //Длина одного диапазона
-diapazon[32], buf=0, 
+diapazon[30], buf=0, 
 kol = 100000; //Сколько чисел считать
 
 //Изначальное обнуление массива диапазонов
@@ -29,9 +29,19 @@ long long power() {
 	long long b = 1, s=0;
 	while (b%m) {
 		b = b*(a - 1);
+		b = b % m;
 		s++;
 	}
 	return s;
+}
+
+//Хи-квадрат
+long double hi_square() {
+	long long hi = 0;
+	for (int d = 0;d < cv;d++) {
+		hi += (diapazon[d] * diapazon[d] * cv);
+	}
+	return (double(hi) / double(kol) - double(kol));
 }
 
 
@@ -54,6 +64,7 @@ int main() {
 			//printf("Period - %lld\n", count);
 			printf("Hi-square:\n");
 		for (int yy = 0;yy < cv;yy++) printf("%2d - %lld\n",yy+1,diapazon[yy]);
+		printf("\nHi-Square = %.2llf\n", hi_square());
 		printf("-------------------------------------------------\n");
 		getchar();
 		return 0;
