@@ -11,6 +11,7 @@ m = 4294967296, //Модуль
 cv=30, //Количество диапазонов
 n=m/cv, //Длина одного диапазона
 diapazon[30], buf=0, 
+masOfX[6], //Массив начальных значений X
 kol = 100000; //Сколько чисел считать
 
 //Изначальное обнуление массива диапазонов
@@ -46,25 +47,33 @@ long double hi_square() {
 
 
 int main() {
-	launch;
-	long long x = rand(), count, y;
+	masOfX[0] = 745;
+	masOfX[1] = 2837377;
+	masOfX[2] = 37488842;
+	masOfX[3] = 419857238;
+	masOfX[4] = 2094658277;
+	long long x, count, y;
 	printf("Power - %lld\n-------------------------------------------------\n", power());
-		long long k = lkg(x);
-		count = 1;
+		long long k = 0;
+		count = 0;
 		y = -1;
-		x = k;
-			for(long long q=0;q<kol;q++) {
+		printf("Hi-Square must be between 18.49 and 43.77\n");
+		for (int g = 0;g < 5;g++) {
+			launch();
+			x = masOfX[g];
+			for (long long q = 0;q < kol;q++) {
 				y = lkg(x);
-				buf = y/n;
+				buf = y / n;
 				diapazon[buf]++;
 				x = y;
 				count++;
 			}
 			count--;
 			//printf("Period - %lld\n", count);
-			printf("Hi-square:\n");
-		for (int yy = 0;yy < cv;yy++) printf("%2d - %lld\n",yy+1,diapazon[yy]);
-		printf("\nHi-Square = %.2llf\n", hi_square());
+			//printf("Hi-square:\n");
+			//for (int yy = 0;yy < cv;yy++) printf("%2d - %lld\n", yy + 1, diapazon[yy]);
+			printf("Hi-Square %d = %.2llf\n", g+1, hi_square());
+		}
 		printf("-------------------------------------------------\n");
 		getchar();
 		return 0;
