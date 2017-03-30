@@ -6,13 +6,13 @@
 
 
 long long a = 79385237, //Множитель
-c = 421, //Сдвиг
+c = 421, //Приращение
 m = 4294967296, //Модуль
-cv = 31, //Количество диапазонов
+cv = 30, //Количество диапазонов
 n = m / cv, //Длина одного диапазона
 diapazon[32], buf = 0,
 masOfX[6], //Массив начальных значений X
-kol = 1000000, //Сколько чисел считать
+kol = 100000, //Сколько чисел считать
 testKol = 5; //Количество тестов
 
 
@@ -78,9 +78,25 @@ int main() {
 	masOfX[4] = 20946582779;
 	long long x, count, y;
 
+
+	//Вычисление периода
+	x = masOfX[4];
+	long long k = lkg(x);
+	count = 1;
+	y = -1;
+	x = k;
+	while (y != k) {
+		y = lkg(x);
+		x = y;
+		count++;
+	}
+	count--;
+	printf("Period - %lld\n-------------------------------------------------\n", count);
+
+	//Вычисление мощности
 	printf("Power - %lld\n-------------------------------------------------\n", power());
 
-
+	//Вычисление Хи-квадрата
 		count = 0;
 		y = -1;
 		printf("Hi-Square must be between 18.49 and 43.77\n");
@@ -96,11 +112,13 @@ int main() {
 			//printf("Period - %lld\n", count);
 			//printf("Hi-square:\n");
 			//for (int yy = 0;yy < cv;yy++) printf("%2d - %lld\n", yy + 1, diapazon[yy]);
-			printf("Hi-Square %d = %.2llf\n", g+1, hi_square());
+			printf("X0 = %11lld | Hi-Square %d = %.2llf\n", masOfX[g], g+1, hi_square());
 		}
 		printf("-------------------------------------------------\n");
 
 
+
+		//Вычисление критерия серий
 		masOfX[0] = 862;
 		masOfX[1] = 862438;
 		masOfX[2] = 12702374;
@@ -118,7 +136,7 @@ int main() {
 				d_2[y1 % d][y2 % d]++;
 				x = y2;
 			}
-			printf("Kriteri' seri' %d = %.2llf\n", g + 1, kri_ser());
+			printf("X0 = %11lld | Kriteri' seri' %d = %.2llf\n", masOfX[g], g + 1, kri_ser());
 		}
 		printf("-------------------------------------------------\n");
 
