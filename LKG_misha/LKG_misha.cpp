@@ -124,7 +124,7 @@ int main() {
 
 		
 		//Pocker-kriterii - dont working
-		/*for (long long q = 0;q < testKol;q++) {
+		for (long long q = 0;q < testKol;q++) {
 			k = 5;
 			x = masOfX[q];
 			for (long long i = 0;i < k;i++) gr[i] = 0;
@@ -143,15 +143,15 @@ int main() {
 			}
 
 
-			/*int i = 0;
+			int i = 0;
 			while (i < k - 1) {
 				if ((__max(p[i], p[i + 1]) - __min(p[i], p[i + 1])) < 0.001) { gr[i] = gr[i] + gr[i + 1]; p[i] = p[i] + p[i + 1]; for (int j = i + 2;j < k;j++) { gr[j - 1] = gr[j]; p[j - 1] = p[j]; } k--; } else i++;
 				
 			}
 
 			printf("Pocker = %.5llf\n", hi_square_pocker());
-			printf("-------------------------------------------------\n");
-		}*/
+		}
+		printf("-------------------------------------------------\n");
 
 		getchar();
 		return 0;
