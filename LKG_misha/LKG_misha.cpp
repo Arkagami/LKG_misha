@@ -19,7 +19,7 @@ testKol = 5; //Количество тестов
 long long
 d = 7, //Наиболее подходящее число
 d_2[7][7], //Массив количества пар
-N = 100000; //Сколько чисел считать
+N = 1000000; //Сколько чисел считать
 
 
 
@@ -92,9 +92,7 @@ int main() {
 				buf = y / n;
 				diapazon[buf]++;
 				x = y;
-				count++;
 			}
-			count--;
 			//printf("Period - %lld\n", count);
 			//printf("Hi-square:\n");
 			//for (int yy = 0;yy < cv;yy++) printf("%2d - %lld\n", yy + 1, diapazon[yy]);
@@ -102,6 +100,12 @@ int main() {
 		}
 		printf("-------------------------------------------------\n");
 
+
+		masOfX[0] = 862;
+		masOfX[1] = 862438;
+		masOfX[2] = 12702374;
+		masOfX[3] = 985346573;
+		masOfX[4] = 27387482615;
 
 		printf("Kriteri' seri' must be between %.2llf and %.2llf\n", (d*d + sqrtl(2.0*powl(double(d),2.0))*(-1.64) + 2.0*powl(1.64,2.0)/3.0 -2.0/3.0), (d*d + sqrtl(2.0*powl(double(d), 2.0))*(1.64) + 2.0*powl(1.64, 2.0) / 3.0 - 2.0 / 3.0));
 		for (int g = 0;g < testKol;g++) {
