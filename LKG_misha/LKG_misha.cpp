@@ -71,10 +71,10 @@ long double kri_ser() {
 }
 
 int main() {
-	masOfX[0] = 723;
-	masOfX[1] = 37482;
-	masOfX[2] = 2837375;
-	masOfX[3] = 419855238;
+	masOfX[0] = 7278973;
+	masOfX[1] = 3748567672;
+	masOfX[2] = 2838737265;
+	masOfX[3] = 4198505238;
 	masOfX[4] = 20946582779;
 	long long x, count, y;
 
@@ -119,10 +119,10 @@ int main() {
 
 
 		//Вычисление критерия серий
-		masOfX[0] = 862;
-		masOfX[1] = 862438;
-		masOfX[2] = 12702374;
-		masOfX[3] = 985346573;
+		masOfX[0] = 862432;
+		masOfX[1] = 8262745438;
+		masOfX[2] = 1270256374;
+		masOfX[3] = 5853464573;
 		masOfX[4] = 27387482615;
 
 		printf("Kriteri' seri' must be between %.2llf and %.2llf\n", (d*d + sqrtl(2.0*powl(double(d),2.0))*(-1.64) + 2.0*powl(1.64,2.0)/3.0 -2.0/3.0), (d*d + sqrtl(2.0*powl(double(d), 2.0))*(1.64) + 2.0*powl(1.64, 2.0) / 3.0 - 2.0 / 3.0));
