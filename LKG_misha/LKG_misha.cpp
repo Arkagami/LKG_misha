@@ -4,12 +4,13 @@
 #include <stdlib.h>
 #include <conio.h>
 
-
+const long long N = 1000000,//Кол-во наблюдений
+prom = 51; //Кол-во промежутков
 long long a = 834633493, //Множитель
 c = 34657, //Приращение
-m = 4294967296; //Модуль
-
-
+m = 4294967296, //Модуль
+R[N], //Массив наблюдений
+T[prom]; //Массив промежутков
 //ЛКГ 
 long long lkg(long long x) {
 	long long  f = (a*x + c) % m;
@@ -25,6 +26,10 @@ int power() {
 		if (k % m == 0) { return s; }
 		s++;
 	}
+}
+
+long long hihi() {
+
 }
 
 int main() {
